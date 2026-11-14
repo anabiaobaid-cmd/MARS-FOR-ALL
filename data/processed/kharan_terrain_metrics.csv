@@ -1,0 +1,2 @@
+region,elevation_min_m,elevation_max_m,elevation_mean_m,elevation_median_m,elevation_std_m,valid_pixels,total_pixels,valid_coverage_percent,analysis_resolution_m,slope_mean_deg,slope_median_deg,slope_p90_deg,roughness_mean_m,roughness_median_m,elevation_p90_m
+Kharan,547.4371948242188,2931.610107421875,1049.91162109375,1011.3936157226562,358.2301025390625,5385439,5565273,96.76864010085399,90,5.176517963409424,2.148578405380249,14.438403129577637,7.133669853210449,3.0,1538.8544921875

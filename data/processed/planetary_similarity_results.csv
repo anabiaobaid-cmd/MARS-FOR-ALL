@@ -1,0 +1,7 @@
+target,earth_region,similarity_score_percent,mean_slope_difference_deg,median_slope_difference_deg,p90_slope_difference_deg,rank
+Jezero (Mars),Kharan,32.46,9.359,7.624,21.866,1
+Jezero (Mars),Thar,11.2,12.846,8.647,32.51,2
+Jezero (Mars),Cholistan,6.87,13.499,9.034,34.152,3
+Shackleton (Moon),Kharan,26.35,15.488,18.402,18.724,1
+Shackleton (Moon),Thar,8.36,18.975,19.425,29.368,2
+Shackleton (Moon),Cholistan,5.03,19.628,19.813,31.01,3
