@@ -1,4 +1,4 @@
-﻿import numpy as np
+import numpy as np
 import rasterio
 
 path = "data/raw/moon/Site04_final_adj_5mpp_slp.tif"

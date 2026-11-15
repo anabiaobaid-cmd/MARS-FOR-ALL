@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARS FOR ALL | The Analog Atlas</title>
+    <link rel="stylesheet" href="static/style.css">
+<style>
+.weight-analysis {
+    margin: 70px auto;
+    padding: 35px;
+    max-width: 1100px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px;
+    background: linear-gradient(145deg,#17232d,#101820);
+    color: #edf2f5;
+}
+.weight-analysis h2 {
+    font-size: clamp(1.7rem,4vw,2.5rem);
+    margin-bottom: 12px;
+}
+.weight-analysis .intro {
+    color: #b9c8d2;
+    line-height: 1.7;
+    max-width: 760px;
+}
+.weight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 18px;
+    margin: 28px 0;
+}
+.weight-card {
+    padding: 22px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(255,255,255,.1);
+}
+.weight-card strong {
+    display: block;
+    font-size: 1.9rem;
+    color: #8bd8c2;
+    margin: 10px 0;
+}
+.weight-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+.weight-table th,
+.weight-table td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.weight-table th {
+    color: #8bd8c2;
+}
+.weight-note {
+    margin-top: 25px;
+    padding: 18px;
+    border-left: 3px solid #e6b86c;
+    background: rgba(230,184,108,.08);
+    color: #d9e0e5;
+    line-height: 1.7;
+}
+@media(max-width:600px) {
+    .weight-analysis { padding: 20px; }
+    .weight-table { font-size: .85rem; }
+}
+</style>
+<style>
+.science-atlas {
+    max-width: 1150px;
+    margin: 75px auto;
+    padding: 35px;
+    color: #edf3f5;
+}
+.science-atlas .science-intro {
+    max-width: 780px;
+    color: #b8c8d1;
+    line-height: 1.8;
+}
+.science-atlas .science-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+.science-atlas .science-card {
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 17px;
+    background: rgba(255,255,255,.045);
+}
+.science-atlas .science-card h3 {
+    color: #91d9c6;
+    margin-bottom: 12px;
+}
+.science-atlas .science-card p {
+    color: #bdcbd2;
+    line-height: 1.7;
+}
+.science-atlas .science-question {
+    margin-top: 30px;
+    padding: 25px;
+    border-left: 3px solid #91d9c6;
+    background: rgba(145,217,198,.07);
+    border-radius: 5px 15px 15px 5px;
+    line-height: 1.8;
+}
+.science-atlas .science-equation {
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 14px;
+    background: rgba(255,255,255,.06);
+    text-align: center;
+    color: #91d9c6;
+    font-size: 1.1rem;
+}
+</style>
+<style>
+.weight-method {
+    max-width:1150px;
+    margin:65px auto;
+    padding:35px;
+    color:#edf3f5;
+}
+.weight-method .weight-intro {
+    max-width:780px;
+    color:#b9c9d1;
+    line-height:1.8;
+}
+.weight-method .weight-scenarios {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:18px;
+    margin:30px 0;
+}
+.weight-method .scenario {
+    padding:23px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    background:rgba(255,255,255,.045);
+}
+.weight-method .scenario h3 {
+    color:#91d9c6;
+}
+.weight-method .ratio {
+    font-size:1.8rem;
+    margin:14px 0;
+    color:#e6c58a;
+}
+.weight-method .weight-result {
+    padding:24px;
+    margin-top:25px;
+    border-left:3px solid #91d9c6;
+    border-radius:5px 14px 14px 5px;
+    background:rgba(145,217,198,.07);
+    line-height:1.8;
+}
+.weight-method .weight-table {
+    width:100%;
+    border-collapse:collapse;
+    margin-top:25px;
+}
+.weight-method .weight-table th,
+.weight-method .weight-table td {
+    padding:12px;
+    text-align:left;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+.weight-method .weight-table th {
+    color:#91d9c6;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav>
+            <div class="logo">MARS <span>FOR ALL</span></div>
+            <div class="nav-label">PLANETARY TERRAIN EXPLORER</div>
+                <a href="#our-story">Our Story</a>
+</nav>
+
+        <section class="hero">
+            <div class="eyebrow">EARTH · MOON · MARS</div>
+
+            <h1>THE ANALOG <span>ATLAS</span></h1>
+
+            <h2>Earth is our testing ground. Space is our frontier.</h2>
+
+            <p>
+                Could Earth's landscapes help us understand where
+                future explorers might build on the Moon and Mars?
+                Explore real planetary terrain data and discover
+                measurable similarities between worlds.
+            </p>
+
+            <a href="#science" class="button">EXPLORE THE SCIENCE →</a>
+        </section>
+
+        <section class="section" id="explore">
+
+            <div class="section-heading">
+                <div class="eyebrow">YOUR MISSION</div>
+                <h2>Three worlds. One question.</h2>
+                <p>
+                    Explore the terrain datasets behind our research.
+                </p>
+            </div>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="planet-icon">🌎</div>
+                    <span class="card-kicker">EARTH ANALOGUES</span>
+                    <h3>Earth</h3>
+                    <p>
+                        Explore candidate analogue regions in Pakistan:
+                        Kharan, Thar and Cholistan.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="planet-icon">🌕</div>
+                    <span class="card-kicker">LUNAR TERRAIN</span>
+                    <h3>Moon</h3>
+                    <p>
+                        Investigate the terrain of Shackleton crater's
+                        rim using NASA lunar elevation data.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="planet-icon">🔴</div>
+                    <span class="card-kicker">MARTIAN TERRAIN</span>
+                    <h3>Mars</h3>
+                    <p>
+                        Examine Jezero crater using Martian elevation
+                        and observation datasets.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section" id="comparison">
+    <div class="section-heading">
+        <div class="eyebrow">LIVE DATA</div>
+        <h2 id="comparison-title">Jezero vs Earth</h2>
+        <p>Compare measured terrain similarity across our three Pakistani candidate regions.</p>
+<div class="target-selector">
+    <label for="target-select">PLANETARY REFERENCE</label>
+    <select id="target-select">
+        <option value="Jezero">Mars — Jezero Crater</option>
+        <option value="Shackleton">Moon — Shackleton Rim</option>
+    </select>
+</div>
+    </div>
+
+    <div id="similarity-results" class="cards">
+        <div class="card">Loading planetary comparison data...</div>
+    </div>
+
+    <p id="data-status" class="nav-label" style="margin-top: 20px;">
+        Connecting to research datasets...
+    </p>
+</section>
+<section class="section" id="terrain-3d">
+    <div class="section-heading">
+        <div class="eyebrow">PLANETARY VISUALIZATION</div>
+        <h2>Explore the Terrain in 3D</h2>
+        <p>Interactive elevation model generated from NASA terrain data for Jezero Crater.</p>
+    </div>
+
+    <div class="card">
+        <div id="jezero-3d" style="width:100%; height:560px;">
+            Loading 3D terrain model...
+        </div>
+        <p class="nav-label" style="margin-top:15px;">
+            Elevation values in metres · NASA MOLA data
+        </p>
+    </div>
+</section>
+        <section class="section" id="shackleton-3d">
+    <div class="section-heading">
+        <div class="eyebrow">LUNAR TERRAIN VISUALIZATION</div>
+        <h2>Explore Shackleton in 3D</h2>
+        <p>Interactive lunar elevation model generated from harmonized Moon terrain data.</p>
+    </div>
+
+    <div class="card">
+        <div id="shackleton-3d-viewer" style="width:100%; height:560px;">
+            Loading Shackleton lunar terrain...
+        </div>
+        <p class="nav-label" style="margin-top:15px;">
+            Elevation in metres · Lunar polar stereographic projection
+        </p>
+    </div>
+</section>
+
+<section class="section" id="our-story">
+    <div class="section-heading">
+        <span class="eyebrow">OUR STORY</span>
+        <h2>From Pakistan to Other Worlds</h2>
+        <p>
+            Scientific exploration begins with curiosity, and curiosity
+            has no geographical boundaries.
+        </p>
+    </div>
+
+    <div class="story-content">
+        <h3>Our landscapes. Our questions. Our place in planetary science.</h3>
+        <p>
+            MARS FOR ALL began with a simple question: could the landscapes
+            around us help us explore the surfaces of other worlds?
+        </p>
+        <p>
+            From the rugged terrain of Kharan to the changing landscapes
+            of Thar and Cholistan, Pakistan offers a remarkable starting
+            point for asking scientific questions about planetary terrain.
+        </p>
+        <p>
+            By comparing these terrestrial landscapes with Jezero crater
+            on Mars and Shackleton crater on the Moon, we aim to make
+            planetary science more accessible, transparent and locally
+            meaningful.
+        </p>
+        <p>
+            This project is also a reminder that participation in space
+            science is not limited by where someone comes from. Students
+            and researchers everywhere can contribute through curiosity,
+            careful analysis and open scientific collaboration.
+        </p>
+        <p>
+            MARS FOR ALL is our invitation to look beyond familiar horizons
+            while recognising the scientific possibilities within our own.
+        </p>
+    </div>
+</section>
+<section class="section science-atlas" id="science-behind-atlas">
+
+    <p class="eyebrow">THE RESEARCH BEHIND THE EXPLORATION</p>
+
+    <h2>Science Behind the Atlas</h2>
+
+    <p class="science-intro">
+        What can the landscapes of Earth teach us about the surfaces
+        of other worlds? MARS FOR ALL investigates this question by
+        comparing selected Pakistani landscapes with terrain from
+        Mars and the Moon using harmonized elevation data and
+        mathematical terrain analysis.
+    </p>
+
+    <div class="science-question">
+        <strong>Our research question</strong>
+        <p>
+            How closely do selected landscapes in Pakistan resemble
+            the terrain characteristics of selected regions on Mars
+            and the Moon when compared using measurable topographic
+            features?
+        </p>
+    </div>
+
+    <div class="science-grid">
+
+        <article class="science-card">
+            <h3>01 · Earth</h3>
+            <p>
+                Kharan, Thar and Cholistan represent three selected
+                Pakistani landscapes. Their elevation data provides
+                the terrestrial side of our comparison.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>02 · Mars</h3>
+            <p>
+                Jezero crater provides our Martian reference terrain,
+                allowing us to investigate similarities between
+                planetary and terrestrial landscapes.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>03 · Moon</h3>
+            <p>
+                Shackleton crater provides our lunar reference,
+                extending the comparison beyond Earth and Mars.
+            </p>
+        </article>
+
+    </div>
+
+    <h3 style="margin-top:40px;">From elevation to terrain characteristics</h3>
+
+    <p class="science-intro">
+        Elevation data describes the height of a surface. From this
+        information, terrain characteristics such as slope and
+        roughness can be derived. Comparing their statistical
+        distributions helps us investigate how different landscapes
+        relate to one another.
+    </p>
+
+    <div class="science-grid">
+
+        <article class="science-card">
+            <h3>Slope</h3>
+            <p>
+                Slope describes how steep the terrain is. It helps
+                distinguish relatively level surfaces from areas
+                with stronger elevation changes.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Roughness</h3>
+            <p>
+                Roughness describes local surface variation and
+                helps characterize how uneven a terrain surface is.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Statistical comparison</h3>
+            <p>
+                Mean, median and 90th-percentile measurements
+                summarize different aspects of slope and roughness.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="science-equation">
+        Six terrain features = 3 slope statistics + 3 roughness statistics
+    </div>
+
+    <p class="science-intro" style="margin-top:25px;">
+        These six measurements form the basis of our similarity
+        framework. The comparison is a mathematical measure of
+        selected terrain characteristics, not proof that two
+        landscapes have identical geological histories.
+    </p>
+
+</section>
+<section class="section weight-method" id="weighting-methodology">
+
+    <p class="eyebrow">MATHEMATICAL FRAMEWORK · SENSITIVITY ANALYSIS</p>
+
+    <h2>Testing the balance of our model</h2>
+
+    <p class="weight-intro">
+        Similarity results depend partly on how much importance
+        is assigned to different terrain characteristics.
+        To investigate this dependence, MARS FOR ALL evaluates
+        three alternative weighting scenarios.
+    </p>
+
+    <div class="weight-scenarios">
+
+        <article class="scenario">
+            <h3>Balanced model</h3>
+            <div class="ratio">50 : 50</div>
+            <p>
+                Slope and roughness groups receive equal overall
+                importance.
+            </p>
+        </article>
+
+        <article class="scenario">
+            <h3>Slope emphasis</h3>
+            <div class="ratio">70 : 30</div>
+            <p>
+                Greater importance is assigned to slope than
+                roughness.
+            </p>
+        </article>
+
+        <article class="scenario">
+            <h3>Roughness emphasis</h3>
+            <div class="ratio">30 : 70</div>
+            <p>
+                Greater importance is assigned to roughness than
+                slope.
+            </p>
+        </article>
+
+    </div>
+
+    <h3>Observed comparison results</h3>
+
+    <p class="weight-intro">
+        Across the tested weighting scenarios, Kharan retained
+        the highest ranking against both planetary reference
+        environments.
+    </p>
+
+    <table class="weight-table">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Region</th>
+                <th>Mean similarity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Jezero</td><td>Kharan</td><td>66.411</td></tr>
+            <tr><td>Jezero</td><td>Thar</td><td>15.101</td></tr>
+            <tr><td>Jezero</td><td>Cholistan</td><td>8.411</td></tr>
+            <tr><td>Shackleton</td><td>Kharan</td><td>13.035</td></tr>
+            <tr><td>Shackleton</td><td>Thar</td><td>2.838</td></tr>
+            <tr><td>Shackleton</td><td>Cholistan</td><td>1.619</td></tr>
+        </tbody>
+    </table>
+
+    <div class="weight-result">
+        <strong>What does this tell us?</strong>
+        <p>
+            The leading region remained consistent under the
+            three tested weighting choices. This supports
+            ranking stability with respect to those choices,
+            although it does not establish statistical
+            confidence or eliminate measurement uncertainty.
+        </p>
+    </div>
+
+</section>
+<section class="section" id="earth-3d">
+    <div class="section-heading">
+        <div class="eyebrow">TERRESTRIAL TERRAIN VISUALIZATION</div>
+        <h2>Explore Earth Analogues in 3D</h2>
+        <p>Interactive elevation models of our three Pakistani candidate regions.</p>
+    </div>
+
+    <div class="card">
+        <h3>Kharan</h3>
+        <p>Western Pakistan · Elevation data</p>
+        <div id="earth-kharan-3d" style="width:100%; height:460px;">
+            Loading Kharan terrain...
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Thar</h3>
+        <p>Southeastern Pakistan · Elevation data</p>
+        <div id="earth-thar-3d" style="width:100%; height:460px;">
+            Loading Thar terrain...
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Cholistan</h3>
+        <p>Southern Punjab, Pakistan · Elevation data</p>
+        <div id="earth-cholistan-3d" style="width:100%; height:460px;">
+            Loading Cholistan terrain...
+        </div>
+    </div>
+</section>
+
+<section class="section science-section" id="science">
+    <div class="science-heading">
+        <span class="science-kicker">RESEARCH AND METHODOLOGY</span>
+        <h2>The Science Behind the Atlas</h2>
+        <p>
+            Explore the research question, planetary datasets,
+            mathematical framework and computational methods
+            behind our terrain comparisons.
+        </p>
+    </div>
+
+    <article class="science-card">
+        <span class="science-number">01 / RESEARCH QUESTION</span>
+        <h3>Can Earth's landscapes help us understand other worlds?</h3>
+        <p>
+            This project investigates whether selected terrestrial
+            landscapes in Pakistan share measurable topographic
+            characteristics with selected lunar and Martian regions.
+            The objective is preliminary terrain-analogue screening,
+            not proof of environmental equivalence or landing-site safety.
+        </p>
+    </article>
+
+    <div class="science-grid">
+        <article class="science-card">
+            <span class="science-number">02 / SITE SELECTION</span>
+            <h3>Our study regions</h3>
+            <p><strong>Moon — Shackleton Crater:</strong> A lunar south-polar region represented by LOLA Site04 elevation data.</p>
+            <p><strong>Mars — Jezero Crater:</strong> Our Martian reference region, represented by MOLA elevation data.</p>
+            <p><strong>Earth:</strong> Kharan, Thar and Cholistan in Pakistan are our terrestrial candidate regions.</p>
+        </article>
+
+        <article class="science-card">
+            <span class="science-number">03 / DATA SOURCES</span>
+            <h3>Where does our data come from?</h3>
+            <p>LOLA — Lunar Orbiter Laser Altimeter. The Shackleton Site04 elevation product has an original resolution of 5 m/pixel.</p>
+            <a href="https://pgda.gsfc.nasa.gov/products/78" target="_blank" rel="noopener">NASA LOLA Product 78 — Site04</a>
+            <p>MOLA — Mars Orbiter Laser Altimeter. MOLA MEGDR provides gridded Martian elevation information.</p>
+            <a href="https://pds.nasa.gov/ds-view/pds/viewDataset.jsp?dsid=MGS-M-MOLA-5-MEGDR-L3-V1.0" target="_blank" rel="noopener">NASA MOLA MEGDR dataset</a>
+            <p>Earth elevation rasters provide the topographic information for our three candidate regions. Their exact product identifiers and source links will be documented in the final data catalogue.</p>
+        </article>
+
+        <article class="science-card science-wide">
+            <span class="science-number">04 / MATHEMATICAL FRAMEWORK</span>
+            <h3>Describing terrain mathematically</h3>
+            <h4>Elevation</h4>
+            <div class="science-equation">z = z(x,y)</div>
+            <p>Elevation z is represented as a function of horizontal position x and y.</p>
+
+            <h4>Slope</h4>
+            <div class="science-equation">S = arctan(√((∂z/∂x)² + (∂z/∂y)²))</div>
+            <p>Slope describes the rate of elevation change across horizontal distance. The result can be expressed in degrees.</p>
+
+            <h4>Local elevation variability</h4>
+            <div class="science-equation">σ = √(Σ(zᵢ − z̄)² / n)</div>
+            <p>This standard-deviation definition describes elevation variability within a neighbourhood. We must verify the exact roughness calculation used in our software before claiming this is its implemented formula.</p>
+
+            <h4>Difference between two measurements</h4>
+            <div class="science-equation">Δ = |A − B|</div>
+            <p>A and B are corresponding terrain measurements. Δ is their absolute difference.</p>
+        </article>
+
+        <article class="science-card">
+            <span class="science-number">05 / DATA PROCESSING</span>
+            <h3>Harmonizing terrain data</h3>
+            <p>Our comparison workflow brings terrain datasets to approximately 463 m spatial resolution.</p>
+            <ul>
+                <li>Inspect raster dimensions and metadata.</li>
+                <li>Check coordinate reference systems.</li>
+                <li>Identify valid and missing observations.</li>
+                <li>Harmonize spatial resolution.</li>
+                <li>Calculate terrain characteristics.</li>
+            </ul>
+            <p>Harmonization creates a more consistent comparison scale but does not eliminate differences in data quality or uncertainty.</p>
+        </article>
+
+        <article class="science-card">
+            <span class="science-number">06 / COMPARISON LOGIC</span>
+            <h3>Interpreting similarity</h3>
+            <p>Our comparison examines selected terrain characteristics between reference and candidate regions.</p>
+            <p>The exact normalization, feature weights and similarity-score formula must be documented from the implemented algorithm. We will not invent a scoring equation or numerical result.</p>
+        </article>
+
+        <article class="science-card science-wide">
+            <span class="science-number">07 / RESULTS AND REPRODUCIBILITY</span>
+            <h3>From data to evidence</h3>
+            <p>The final report will include actual measurements, units, valid-data coverage, processing resolution and the calculation method for each result.</p>
+            <p>Candidate comparisons must be traceable to their source rasters and processing steps. No ranking should be presented without its supporting calculations.</p>
+        </article>
+
+        <article class="science-card science-wide">
+            <span class="science-number">08 / SCIENTIFIC LIMITATIONS</span>
+            <h3>Terrain resemblance is not environmental equivalence</h3>
+            <p>Earth does not reproduce the Moon's vacuum, polar illumination or reduced gravity, nor Mars' atmosphere and environmental conditions.</p>
+            <p>Topographic similarity alone cannot establish habitability, engineering suitability, resource availability or mission safety. Further geological, environmental and engineering investigation is necessary.</p>
+        </article>
+    </div>
+
+    <div class="science-references">
+        <span class="science-number">09 / REFERENCES</span>
+        <h3>Primary scientific sources</h3>
+        <ol>
+            <li><a href="https://pgda.gsfc.nasa.gov/products/78" target="_blank" rel="noopener">NASA — LOLA Product 78, Shackleton Site04</a></li>
+            <li><a href="https://pds.nasa.gov/ds-view/pds/viewDataset.jsp?dsid=MGS-M-MOLA-5-MEGDR-L3-V1.0" target="_blank" rel="noopener">NASA Planetary Data System — MOLA MEGDR</a></li>
+            <li><a href="https://doi.org/10.1016/j.icarus.2010.10.030" target="_blank" rel="noopener">Mazarico et al. (2011) — Lunar polar illumination conditions</a></li>
+            <li><a href="https://doi.org/10.1016/j.pss.2020.105119" target="_blank" rel="noopener">Barker et al. (2021) — LOLA elevation maps for lunar south-pole sites</a></li>
+        </ol>
+    </div>
+</section>
+
+<section class="weight-analysis" id="weighting-analysis">
+    <p class="eyebrow">SCIENTIFIC VALIDATION · MODEL ROBUSTNESS</p>
+
+    <h2>How stable are our planetary comparisons?</h2>
+
+    <p class="intro">
+        A similarity model can produce different results depending on
+        how its terrain characteristics are weighted. We therefore
+        tested three alternative weighting scenarios to examine
+        whether our comparisons remain consistent.
+    </p>
+
+    <div class="weight-grid">
+        <div class="weight-card">
+            <span>Jezero comparison</span>
+            <strong>Kharan</strong>
+            <p>Highest mean similarity: 66.411</p>
+        </div>
+
+        <div class="weight-card">
+            <span>Shackleton comparison</span>
+            <strong>Kharan</strong>
+            <p>Highest mean similarity: 13.035</p>
+        </div>
+
+        <div class="weight-card">
+            <span>Tested scenarios</span>
+            <strong>3</strong>
+            <p>Balanced, slope emphasis and roughness emphasis</p>
+        </div>
+    </div>
+
+    <h3>Similarity across tested comparisons</h3>
+
+    <table class="weight-table">
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Earth region</th>
+                <th>Mean similarity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Mars · Jezero</td><td>Kharan</td><td>66.411</td></tr>
+            <tr><td>Mars · Jezero</td><td>Thar</td><td>15.101</td></tr>
+            <tr><td>Mars · Jezero</td><td>Cholistan</td><td>8.411</td></tr>
+            <tr><td>Moon · Shackleton</td><td>Kharan</td><td>13.035</td></tr>
+            <tr><td>Moon · Shackleton</td><td>Thar</td><td>2.838</td></tr>
+            <tr><td>Moon · Shackleton</td><td>Cholistan</td><td>1.619</td></tr>
+        </tbody>
+    </table>
+
+    <div class="weight-note">
+        <strong>Scientific interpretation</strong><br>
+        Kharan retained the highest ranking across all three tested
+        weighting scenarios for both reference environments.
+        This indicates ranking stability under the tested weighting
+        choices. It does not establish statistical confidence or
+        account for measurement and spatial uncertainty.
+    </div>
+</section>
+<section class="section" id="scientific-reliability">
+    <div class="section-heading">
+        <p class="eyebrow">DATA QUALITY · UNCERTAINTY · VALIDATION</p>
+        <h2>How Reliable Are Our Comparisons?</h2>
+        <p>
+            Scientific comparisons are only meaningful when their data quality,
+            uncertainty and limitations are made transparent.
+        </p>
+    </div>
+
+    <div class="science-grid">
+        <article class="science-card">
+            <h3>Measurement Uncertainty</h3>
+            <p>
+                Elevation measurements are not perfectly exact. The lunar
+                dataset includes an elevation-uncertainty raster, allowing
+                measurement uncertainty to be considered separately from
+                terrain similarity.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Observation Coverage</h3>
+            <p>
+                The number and distribution of observations affect how
+                confidently terrain can be characterized. Observation-count
+                datasets are available for the Moon and Jezero crater.
+                Coverage must not be confused with the percentage of valid
+                pixels in the harmonized grid.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Resolution and Resampling</h3>
+            <p>
+                Datasets from different planetary bodies may originate at
+                different spatial resolutions. Harmonization makes comparison
+                possible, but resampling can affect local terrain details
+                and derived measurements.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Missing Data</h3>
+            <p>
+                Areas without valid measurements must be distinguished from
+                areas with measured terrain. Missing observations can affect
+                the representativeness of regional statistics.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Weighting Sensitivity</h3>
+            <p>
+                The similarity model was tested under balanced, slope-focused
+                and roughness-focused weighting scenarios. Kharan retained
+                the highest ranking for both planetary reference regions
+                across these tested scenarios.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Scientific Limitations</h3>
+            <p>
+                A high terrain-similarity score indicates resemblance in the
+                selected measurements. It does not establish identical
+                geological histories, composition, environmental conditions
+                or suitability for a particular mission.
+            </p>
+        </article>
+    </div>
+
+    <p class="science-note">
+        Transparency note: weighting sensitivity is not a statistical
+        confidence interval. Measurement-error propagation, spatial
+        block bootstrap, resolution sensitivity and independent validation
+        remain separate analyses.
+    </p>
+</section>
+<section class="section" id="mathematical-model">
+    <div class="section-heading">
+        <p class="eyebrow">MATHEMATICS · COMPUTATIONAL MODEL</p>
+        <h2>The Mathematics Behind the Atlas</h2>
+        <p>
+            Every comparison is built from measurable terrain properties.
+            This section documents the equations used to transform elevation
+            data into comparable scientific features.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>1. Terrain Slope</h3>
+        <p>
+            Slope describes the steepness of the terrain, derived from
+            the spatial gradients of elevation.
+        </p>
+        <p class="equation">
+            S = (180 / π) × arctan(√[(∂z/∂x)² + (∂z/∂y)²])
+        </p>
+        <p>
+            Here, z represents elevation, while ∂z/∂x and ∂z/∂y
+            represent elevation gradients in the two horizontal directions.
+            The result is expressed in degrees.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>2. Local Terrain Roughness</h3>
+        <p>
+            Roughness measures local elevation variation using the
+            standard deviation of valid elevation values in a 3 × 3
+            neighbourhood.
+        </p>
+        <p class="equation">
+            R = √[(1/n) × Σ(zᵢ − z̄)²]
+        </p>
+        <p>
+            Here, zᵢ represents each valid elevation value, z̄ is the
+            local mean elevation, and n is the number of valid values
+            in the neighbourhood. Roughness is expressed in metres.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>3. Regional Statistical Features</h3>
+        <p>
+            For each region, slope and roughness are summarized using
+            three statistics:
+        </p>
+        <ul>
+            <li><strong>Mean:</strong> the arithmetic average.</li>
+            <li><strong>Median:</strong> the middle value in the distribution.</li>
+            <li><strong>P90:</strong> the 90th percentile, representing
+                a high-end terrain value without relying only on the maximum.</li>
+        </ul>
+        <p>
+            These produce six comparison features: three slope statistics
+            and three roughness statistics.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>4. Feature-Level Similarity</h3>
+        <p>
+            Each corresponding Earth and planetary feature is compared
+            using a ratio-based similarity score.
+        </p>
+        <p class="equation">
+            Sᵢ = 100 × min(|Aᵢ|, |Bᵢ|) / max(|Aᵢ|, |Bᵢ|)
+        </p>
+        <p>
+            Aᵢ and Bᵢ are the corresponding feature values from the two
+            regions. If both values are zero, the feature similarity
+            is defined as 100.
+        </p>
+        <p>
+            A score closer to 100 indicates closer numerical resemblance
+            for that feature. This is a comparison of measured values,
+            not a measure of geological identity.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>5. Group Similarity</h3>
+        <p>
+            The three slope-feature scores are averaged to obtain
+            slope similarity:
+        </p>
+        <p class="equation">
+            Slope Similarity = (S₁ + S₂ + S₃) / 3
+        </p>
+        <p>
+            The three roughness-feature scores are averaged separately:
+        </p>
+        <p class="equation">
+            Roughness Similarity = (S₄ + S₅ + S₆) / 3
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>6. Weighted Overall Similarity</h3>
+        <p>
+            The two group scores are combined using the selected
+            slope and roughness weights.
+        </p>
+        <p class="equation">
+            Overall Similarity = (Slope Similarity × wₛ)
+            + (Roughness Similarity × wᵣ)
+        </p>
+        <p>
+            The weights sum to 1. The model evaluates three scenarios:
+        </p>
+        <ul>
+            <li><strong>Balanced:</strong> slope 0.50, roughness 0.50.</li>
+            <li><strong>Slope emphasis:</strong> slope 0.70, roughness 0.30.</li>
+            <li><strong>Roughness emphasis:</strong> slope 0.30, roughness 0.70.</li>
+        </ul>
+        <p>
+            The final score remains on a 0–100 scale. Rankings are
+            ordered from highest to lowest overall similarity.
+        </p>
+    </div>
+
+    <p class="science-note">
+        The website's comparison uses harmonized terrain metrics at
+        approximately 463-metre resolution. These equations describe
+        the comparison framework; the resulting scores remain dependent
+        on source-data quality, spatial resolution and valid coverage.
+    </p>
+</section>
+<section class="section" id="data-references">
+    <div class="section-heading">
+        <p class="eyebrow">OPEN DATA · TRACEABLE RESEARCH</p>
+        <h2>Data Sources & Scientific References</h2>
+        <p>
+            The Analog Atlas builds its comparisons from planetary
+            elevation datasets and scientific research products.
+            Explore the original sources below.
+        </p>
+    </div>
+
+    <div class="science-grid">
+        <article class="science-card">
+            <h3>Earth — SRTM</h3>
+            <p>
+                NASA Shuttle Radar Topography Mission Global
+                1 Arc-Second V003. Used as the primary elevation
+                source for the Pakistani study regions.
+            </p>
+            <p><strong>Dataset:</strong> SRTMGL1.003</p>
+            <p><strong>Resolution:</strong> Approximately 30 metres</p>
+            <a href="https://doi.org/10.5067/MEASURES/SRTM/SRTMGL1.003"
+               target="_blank" rel="noopener noreferrer">
+                Open NASA Earthdata dataset
+            </a>
+        </article>
+
+        <article class="science-card">
+            <h3>Moon — LOLA</h3>
+            <p>
+                Lunar Orbiter Laser Altimeter South Pole landing-site
+                topography. Site04 represents the Shackleton rim.
+                Its products include elevation, slope, observation
+                counts and uncertainty.
+            </p>
+            <p><strong>Product:</strong> NASA PGDA Product 78</p>
+            <p><strong>Source file:</strong> Site04_final_adj_5mpp_surf.tif</p>
+            <a href="https://pgda.gsfc.nasa.gov/products/78"
+               target="_blank" rel="noopener noreferrer">
+                Open NASA LOLA dataset
+            </a>
+        </article>
+
+        <article class="science-card">
+            <h3>Mars — MOLA</h3>
+            <p>
+                Mars Orbiter Laser Altimeter topography from the
+                Mars Global Surveyor mission. The MEGDR products
+                provide gridded elevation and observation-count data
+                used in the Jezero study.
+            </p>
+            <p><strong>Product:</strong> MOLA MEGDR MEG128</p>
+            <p><strong>Archive:</strong> NASA Planetary Data System</p>
+            <a href="https://pds-geosciences.wustl.edu/missions/mgs/megdr.html"
+               target="_blank" rel="noopener noreferrer">
+                Open MOLA data archive
+            </a>
+        </article>
+
+        <article class="science-card">
+            <h3>LOLA Scientific Method</h3>
+            <p>
+                Mazarico et al. (2011). Illumination conditions
+                of the lunar polar regions using LOLA topography.
+                Icarus, 211(2), 1066–1081.
+            </p>
+            <a href="https://doi.org/10.1016/j.icarus.2010.10.030"
+               target="_blank" rel="noopener noreferrer">
+                Read the research paper
+            </a>
+        </article>
+
+        <article class="science-card">
+            <h3>Elevation Uncertainty Research</h3>
+            <p>
+                Barker et al. (2021). Improved LOLA Elevation Maps
+                for South Pole Landing Sites: Error Estimates and
+                Their Impact on Illumination Conditions.
+                Planetary and Space Science, 203, 105119.
+            </p>
+            <a href="https://doi.org/10.1016/j.pss.2020.105119"
+               target="_blank" rel="noopener noreferrer">
+                Read the research paper
+            </a>
+        </article>
+    </div>
+
+    <p class="science-note">
+        Dataset providers are credited for the original observations
+        and products. The Analog Atlas performs its own regional
+        extraction, harmonization, terrain analysis and similarity
+        calculations. Processed project outputs should not be confused
+        with the original source datasets.
+    </p>
+</section>
+<section class="section" id="planetary-comparison">
+    <div class="section-heading">
+        <p class="eyebrow">EARTH · MOON · MARS</p>
+        <h2>Two Worlds, One Comparative Framework</h2>
+        <p>
+            What happens when the same six-feature terrain comparison
+            framework is applied to two very different planetary
+            environments?
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>Jezero Crater — Mars</h3>
+        <p>
+            Kharan achieved a mean similarity of 66.411, compared
+            with 15.1007 for Thar and 8.4114 for Cholistan.
+        </p>
+        <p>
+            Within the selected Earth regions, Kharan was the strongest
+            numerical match to the Jezero reference across all three
+            weighting scenarios.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>Shackleton Crater — Moon</h3>
+        <p>
+            Kharan also ranked first against Shackleton, with a mean
+            similarity of 13.0353. Thar scored 2.8375 and Cholistan
+            scored 1.6194.
+        </p>
+        <p>
+            This result must be interpreted alongside the Moon's
+            limited direct source-observation coverage of 9.1541%
+            in the analysed Shackleton region.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>What Remained Consistent?</h3>
+        <p>
+            Kharan ranked first among the three selected Pakistani
+            landscapes for both planetary reference regions under
+            all three tested weighting scenarios.
+        </p>
+        <p>
+            This is the most consistent comparative finding across
+            the two investigations. It shows that the leading regional
+            ranking persisted when the planetary reference changed.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>What Was Different?</h3>
+        <p>
+            The numerical similarity values were substantially higher
+            for the Jezero comparison than for the Shackleton comparison.
+            This reflects the measured feature relationships within
+            this particular model and dataset.
+        </p>
+        <p>
+            Scores from different planetary comparisons should not be
+            interpreted as proof that one planetary landscape is
+            geologically more similar to Earth in every respect.
+            They describe resemblance across the six selected
+            terrain statistics only.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>Why Data Coverage Matters</h3>
+        <p>
+            For Jezero, 100% of valid source pixels were identified
+            as observed. However, valid coverage across the harmonized
+            target grid was approximately 32.4524%.
+        </p>
+        <p>
+            These percentages describe different stages and different
+            denominators. They must not be confused with each other
+            or directly compared with Shackleton's 9.1541% direct
+            source-observation coverage.
+        </p>
+    </div>
+
+    <p class="science-note">
+        Across both planetary comparisons, Kharan retained the highest
+        ranking in the tested scenarios. This is a robust ranking
+        within the tested weighting choices, not proof of universal
+        geological similarity or statistical certainty.
+    </p>
+</section>
+<section class="section" id="lunar-finding">
+    <div class="section-heading">
+        <p class="eyebrow">THE LUNAR INVESTIGATION · SHACKLETON CRATER</p>
+        <h2>Looking Beyond Earth: The Lunar Finding</h2>
+        <p>
+            Our comparison with the Moon produced a consistent ranking,
+            but it also revealed why planetary data coverage matters
+            when interpreting scientific results.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>Kharan: The Leading Lunar Terrain Match</h3>
+        <p>
+            Among Kharan, Thar and Cholistan, Kharan produced the
+            highest mean similarity to the Shackleton crater reference
+            in our six-feature terrain model.
+        </p>
+        <p class="equation">Kharan: 13.0353</p>
+        <p>
+            Thar scored 2.8375 and Cholistan scored 1.6194.
+            Kharan remained the highest-ranked region across all
+            three tested weighting scenarios.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>A Critical Discovery About Lunar Data Coverage</h3>
+        <p>
+            The Shackleton source dataset had approximately 9.1541%
+            direct source-observation coverage in the analysed region.
+            This describes the proportion of source pixels identified
+            as directly observed, not the percentage of valid pixels
+            in the harmonized comparison grid.
+        </p>
+        <p>
+            These are different measures and must not be treated
+            as interchangeable. A harmonized grid can contain valid
+            values even where direct source observations are limited.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>Why This Changes How We Interpret the Result</h3>
+        <p>
+            Limited or uneven observation coverage can affect how
+            representative the measured terrain statistics are.
+            Resampling and harmonization also do not create new
+            independent observations.
+        </p>
+        <p>
+            The lunar similarity score should therefore be read as
+            a comparison of the available processed terrain measurements,
+            with source coverage kept visible as an important limitation.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>What We Can and Cannot Conclude</h3>
+        <p>
+            We can report that Kharan ranked first among the three
+            selected Pakistani regions under the tested weighting
+            scenarios.
+        </p>
+        <p>
+            We cannot conclude from this score alone that Kharan is
+            geologically identical to Shackleton, that the lunar
+            surface is fully represented by the available observations,
+            or that the comparison establishes a mission-ready analogue.
+        </p>
+    </div>
+
+    <p class="science-note">
+        Lunar interpretation must be considered alongside the LOLA
+        elevation-uncertainty and observation-count products. The
+        existence of these datasets does not itself constitute a
+        completed uncertainty-propagation analysis.
+    </p>
+</section>
+<section class="section" id="research-results">
+    <div class="section-heading">
+        <p class="eyebrow">FINDINGS · COMPARATIVE ANALYSIS</p>
+        <h2>What Did the Atlas Discover?</h2>
+        <p>
+            The six-feature model compares the terrain of three Pakistani
+            regions with two planetary reference regions. The results below
+            summarise the mean similarity across the three tested weighting
+            scenarios.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>Jezero Crater — Martian Reference</h3>
+        <div class="results-table-wrap">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Earth Region</th>
+                        <th>Mean Similarity</th>
+                        <th>Weighting Sensitivity Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kharan</td>
+                        <td>66.411</td>
+                        <td>0.7007</td>
+                    </tr>
+                    <tr>
+                        <td>Thar</td>
+                        <td>15.1007</td>
+                        <td>0.3426</td>
+                    </tr>
+                    <tr>
+                        <td>Cholistan</td>
+                        <td>8.4114</td>
+                        <td>0.2370</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="science-card">
+        <h3>Shackleton Crater — Lunar Reference</h3>
+        <div class="results-table-wrap">
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Earth Region</th>
+                        <th>Mean Similarity</th>
+                        <th>Weighting Sensitivity Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kharan</td>
+                        <td>13.0353</td>
+                        <td>0.0817</td>
+                    </tr>
+                    <tr>
+                        <td>Thar</td>
+                        <td>2.8375</td>
+                        <td>0.0155</td>
+                    </tr>
+                    <tr>
+                        <td>Cholistan</td>
+                        <td>1.6194</td>
+                        <td>0.0205</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="science-card">
+        <h3>The Most Consistent Finding</h3>
+        <p>
+            Kharan ranked first among the three selected Pakistani
+            regions for both Jezero and Shackleton under all three
+            tested weighting scenarios.
+        </p>
+        <p>
+            This ranking stability suggests that the leading result
+            was not dependent on choosing only one of the tested
+            slope-versus-roughness weighting balances.
+        </p>
+    </div>
+
+    <div class="science-card">
+        <h3>How to Interpret These Scores</h3>
+        <p>
+            The Jezero comparison produced higher similarity values
+            than the Shackleton comparison for all three Earth regions
+            in this model. Kharan was the strongest relative match
+            in both comparisons.
+        </p>
+        <p>
+            These findings describe resemblance across the six selected
+            terrain statistics. They do not establish identical geological
+            origins, environmental conditions or mission suitability.
+        </p>
+    </div>
+
+    <p class="science-note">
+        Mean similarity is averaged across the three tested weighting
+        scenarios. The sensitivity range describes variation across
+        those scenarios; it is not a statistical confidence interval.
+        Values are reproduced from the project's existing analysis.
+    </p>
+</section>
+<section class="section" id="research-integrity">
+    <div class="section-heading">
+        <p class="eyebrow">TRANSPARENCY · REPRODUCIBILITY</p>
+        <h2>Research Integrity & Reproducibility</h2>
+        <p>
+            The Analog Atlas distinguishes original observations,
+            derived terrain measurements and model-based interpretations.
+        </p>
+    </div>
+
+    <div class="science-grid">
+        <article class="science-card">
+            <h3>Original Observations</h3>
+            <p>
+                Elevation and observation products originate from
+                established planetary and Earth-observation datasets.
+                Their source institutions and product references are
+                documented in this Atlas.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Derived Measurements</h3>
+            <p>
+                Slope, roughness and regional statistical summaries
+                are computationally derived from elevation data.
+                They are not direct measurements of geological
+                composition or environmental conditions.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Model-Based Findings</h3>
+            <p>
+                Similarity scores are outputs of a six-feature
+                comparison framework. Rankings depend on the
+                selected regions, features, data preparation
+                and weighting assumptions.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Reproducibility</h3>
+            <p>
+                The project separates source datasets, processed
+                terrain products, analysis scripts and website
+                visualizations to make the research workflow
+                easier to trace and review.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Uncertainty Still Under Investigation</h3>
+            <p>
+                Measurement-error propagation, spatial block
+                bootstrap, confidence intervals, resolution
+                sensitivity, missing-data sensitivity and
+                independent validation remain separate
+                scientific tasks.
+            </p>
+        </article>
+
+        <article class="science-card">
+            <h3>Responsible Conclusions</h3>
+            <p>
+                The Atlas identifies numerical terrain resemblance
+                within a defined model. It does not claim geological
+                equivalence, identical planetary histories or
+                mission suitability.
+            </p>
+        </article>
+    </div>
+</section>
+
+        <footer class="atlas-footer">
+            <p>MARS FOR ALL · THE ANALOG ATLAS · PLANETARY TERRAIN RESEARCH</p>
+            <p>NASA Space Apps Challenge 2026</p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-3.1.0.min.js"></script>
+    <script src="static/atlas_data.js"></script>
+    <script src="static/app.js"></script>
+</body>
+</html>
